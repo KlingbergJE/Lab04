@@ -1,10 +1,11 @@
 #include "Password.h"
 #include "ListArrayIterator.h"
 using CSC2110::ListArrayIterator;
-//include listarray.h using namespace csc2110::listarray??
+#include "ListArray.h"
+using CSC2110::ListArray;//????
 #include <iostream>
 using namespace std;
-
+//is there other stuff to include
 Password::Password()//constructor
 {
 	
