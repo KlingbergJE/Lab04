@@ -1,4 +1,5 @@
 #include "Password.h"
+#include "ListArrayIterator.h"
 using CSC2110::ListArrayIterator;
 //include listarray.h using namespace csc2110::listarray??
 #include <iostream>
@@ -14,6 +15,15 @@ Password::~Password()//destructor
 	
 }
 
+int Password::getNumMatches(String* curr_word, String* word_guess)
+{
+	int matchcount;
+	//private helper method
+	//i don't know what to do
+	//why am i even here
+	return matchcount;
+}
+
 void Password::addWord(String* word)//
 {
 	viable_passwords.add(word);
@@ -21,9 +31,9 @@ void Password::addWord(String* word)//
 }
 
 void Password::guess(int try_password, int num_matches)
-{
-	
-}
+{//compare gNM with num_matches??
+	//getNumMatches( ,getOriginalWord(try_password)) what to make 1st parameter
+}//listarrayiterator to put each item through gNM????????
 
 int Password::getNumberOfPasswordsLeft()//
 {
@@ -31,7 +41,7 @@ int Password::getNumberOfPasswordsLeft()//
 	return difference;
 }
 
-void Password::displayViableWords()//
+void Password::displayViableWords()//listarrayiterator?
 {
 	for (int i=1;i<=viable_passwords.size();i++)//max_size or size???
 	{
@@ -102,5 +112,5 @@ int Password::bestGuess()
 
 String* Password::getOriginalWord(int index)
 {
-	
+	return all_words.get(index);//??????
 }
