@@ -18,35 +18,52 @@ Password::~Password()//destructor
 
 int Password::getNumMatches(String* curr_word, String* word_guess)
 {
-	int matchcount;
-	//private helper method
-	//i don't know what to do
-	//why am i even here
+	int matchcount=0;
+	for (int i=0;i<curr_word->length();i++)
+	{
+		if (curr_word->charAt(i)==word_guess->charAt(i))
+			matchcount++;
+	}
 	return matchcount;
 }
 
 void Password::addWord(String* word)//
 {
-	viable_passwords.add(word);
-	all_words.add(word);
+	viable_passwords->add(word);
+	all_words->add(word);
 }
 
 void Password::guess(int try_password, int num_matches)
-{//compare gNM with num_matches??
-	//getNumMatches( ,getOriginalWord(try_password)) what to make 1st parameter
-}//listarrayiterator to put each item through gNM????????
+{   
+	//String* word_guess=all_words->get(try_password);
+	String* Word;
+	ListArray<String*> newList;
+	ListArrayIterator<String>* iter=viable_passwords->iterator();
+	while(iter->hasNext())//keep looping until hasNext is false
+	{
+		String* Word=iter->next();
+		if (getNumMatches(Word, getOriginalWord(try_password))=num_matches);
+		{
+			newList->add(Word);
+		}
+	}
+	delete viable_words;
+	viable_words=newList;
+	delete iter;
+	
+}
 
-int Password::getNumberOfPasswordsLeft()//
-{
-	int difference=all_words.size()-viable_passwords.size();
+int Password::getNumberOfPasswordsLeft()//ok I KNOW this is wrong
+{//is there a way to count how many times a function has been used
+	int difference=all_words->size()-viable_passwords->size();
 	return difference;
 }
 
 void Password::displayViableWords()//listarrayiterator?
 {
-	for (int i=1;i<=viable_passwords.size();i++)//max_size or size???
+	for (int i=1;i<=viable_passwords->size();i++)//max_size or size???
 	{
-		cout << viable_passwords.get(i) << endl;
+		cout << viable_passwords->get(i) << endl;
 	}
 }
 
@@ -113,5 +130,5 @@ int Password::bestGuess()
 
 String* Password::getOriginalWord(int index)
 {
-	return all_words.get(index);//??????
+	return all_words->get(index);//??????
 }
