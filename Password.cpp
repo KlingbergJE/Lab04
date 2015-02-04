@@ -9,14 +9,15 @@ using namespace std;
 //is there other stuff to include
 Password::Password()//constructor
 {
-	//uh. new stuff?
+	len=0;
+	viable_words=new ListArray<String>();
+	all_words=new ListArray<String>();
 }
 
 Password::~Password()//destructor
 {
-	//just like. delete everything? delete members of password and
-	//use a listarrayiterator to delete all the items in the lists
-	//and then delete the iterator. is that it. do i delete the password
+	delete viable_words;
+	delete all_words;
 }
 
 int Password::getNumMatches(String* curr_word, String* word_guess)
