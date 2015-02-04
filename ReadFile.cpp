@@ -1,7 +1,7 @@
 #include "ReadFile.h"
 #include <iostream>
 #include <string>
-
+using namespace CSC2110;
 ReadFile::ReadFile(const char* file_name)
 {
    input_file = new std::ifstream();

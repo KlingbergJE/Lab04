@@ -1,4 +1,5 @@
 #include "Password.h"
+using CSC2110::Password;
 #include "ListArrayIterator.h"
 using CSC2110::ListArrayIterator;
 #include "ListArray.h"
@@ -8,12 +9,14 @@ using namespace std;
 //is there other stuff to include
 Password::Password()//constructor
 {
-	
+	//uh. new stuff?
 }
 
 Password::~Password()//destructor
 {
-	
+	//just like. delete everything? delete members of password and
+	//use a listarrayiterator to delete all the items in the lists
+	//and then delete the iterator. is that it. do i delete the password
 }
 
 int Password::getNumMatches(String* curr_word, String* word_guess)
@@ -29,7 +32,7 @@ int Password::getNumMatches(String* curr_word, String* word_guess)
 
 void Password::addWord(String* word)//
 {
-	viable_passwords->add(word);
+	viable_words->add(word);
 	all_words->add(word);
 }
 
@@ -37,33 +40,32 @@ void Password::guess(int try_password, int num_matches)
 {   
 	//String* word_guess=all_words->get(try_password);
 	String* Word;
-	ListArray<String*> newList;
-	ListArrayIterator<String>* iter=viable_passwords->iterator();
+	ListArray<String>* newList;
+	ListArrayIterator<String>* iter=viable_words->iterator();
 	while(iter->hasNext())//keep looping until hasNext is false
 	{
 		String* Word=iter->next();
-		if (getNumMatches(Word, getOriginalWord(try_password))=num_matches);
+		if (getNumMatches(Word, getOriginalWord(try_password))==num_matches);
 		{
 			newList->add(Word);
 		}
 	}
-	delete viable_words;
-	viable_words=newList;
+	delete viable_words;//is this stuff ordered correctly
+	viable_words=newList;//listarray<string*> v_p
 	delete iter;
 	
 }
 
 int Password::getNumberOfPasswordsLeft()//ok I KNOW this is wrong
 {//is there a way to count how many times a function has been used
-	int difference=all_words->size()-viable_passwords->size();
-	return difference;
+	
 }
 
-void Password::displayViableWords()//listarrayiterator?
+void Password::displayViableWords()
 {
-	for (int i=1;i<=viable_passwords->size();i++)//max_size or size???
+	for (int i=1;i<=viable_words->size();i++)
 	{
-		cout << viable_passwords->get(i) << endl;
+		cout << viable_words->get(i) << endl;
 	}
 }
 

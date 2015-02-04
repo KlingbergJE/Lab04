@@ -3,7 +3,7 @@
 #include "Text.h"
 #include "ReadFile.h"
 //fill in includes, don't forget namespaces!!!!
-
+using namespace CSC2110;//can i please use this instead of four class specs
 #include <iostream>
 using namespace std;
 
