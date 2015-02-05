@@ -3,10 +3,9 @@ using CSC2110::Password;
 #include "ListArrayIterator.h"
 using CSC2110::ListArrayIterator;
 #include "ListArray.h"
-using CSC2110::ListArray;//????
+using CSC2110::ListArray;
 #include <iostream>
 using namespace std;
-//is there other stuff to include
 Password::Password()//constructor
 {
 	len=0;
@@ -17,54 +16,57 @@ Password::Password()//constructor
 Password::~Password()//destructor
 {
 	delete viable_words;
-	delete all_words;
+	delete all_words;//because the class is a pointer, the destructor deletes all of the items that it points to
 }
 
 int Password::getNumMatches(String* curr_word, String* word_guess)
 {
 	int matchcount=0;
-	for (int i=0;i<curr_word->length();i++)
+	for (int i=0;i<curr_word->length();i++)//until you reach the end of the word
 	{
-		if (curr_word->charAt(i)==word_guess->charAt(i))
+		if (curr_word->charAt(i)==word_guess->charAt(i))//this is in the String class
 			matchcount++;
 	}
 	return matchcount;
 }
 
-void Password::addWord(String* word)//
+void Password::addWord(String* word)
 {
-	viable_words->add(word);
-	all_words->add(word);
+	if (len==0)
+		len=word->length();
+	if (len==word->length;)//not an else-if because you still have to add the first word!
+	{
+		viable_words->add(word);
+		all_words->add(word);
+	}
 }
 
 void Password::guess(int try_password, int num_matches)
 {   
 	//String* word_guess=all_words->get(try_password);
-	String* Word;
 	ListArray<String>* newList;
 	ListArrayIterator<String>* iter=viable_words->iterator();
 	while(iter->hasNext())//keep looping until hasNext is false
 	{
 		String* Word=iter->next();
-		if (getNumMatches(Word, getOriginalWord(try_password))==num_matches);
+		if (getNumMatches(Word, getOriginalWord(try_password))==num_matches);//could use word_guess
 		{
 			newList->add(Word);
 		}
 	}
-	delete viable_words;//is this stuff ordered correctly
-	viable_words=newList;//listarray<string*> v_p
-	delete iter;
-	
+	delete viable_words;
+	viable_words=newList;//just make a new list and replace the old one with it
+	delete iter;//this may not be necessary
 }
 
-int Password::getNumberOfPasswordsLeft()//ok I KNOW this is wrong
-{//is there a way to count how many times a function has been used
-	
+int Password::getNumberOfPasswordsLeft()
+{
+	return viable_words->size();//num_viable_passwords
 }
 
 void Password::displayViableWords()
 {
-	for (int i=1;i<=viable_words->size();i++)
+	for (int i=1;i<=viable_words->size();i++)//until you reach the end of the list
 	{
 		cout << viable_words->get(i) << endl;
 	}
@@ -133,5 +135,5 @@ int Password::bestGuess()
 
 String* Password::getOriginalWord(int index)
 {
-	return all_words->get(index);//??????
+	return all_words->get(index);
 }
