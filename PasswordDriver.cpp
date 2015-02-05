@@ -2,8 +2,7 @@
 #include "Keyboard.h"
 #include "Text.h"
 #include "ReadFile.h"
-//fill in includes, don't forget namespaces!!!!
-using namespace CSC2110;//can i please use this instead of four class specs
+using namespace CSC2110;
 #include <iostream>
 using namespace std;
 

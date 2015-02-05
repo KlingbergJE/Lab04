@@ -4,6 +4,8 @@ using CSC2110::Password;
 using CSC2110::ListArrayIterator;
 #include "ListArray.h"
 using CSC2110::ListArray;
+#include "Text.h"
+using CSC2110::String;
 #include <iostream>
 using namespace std;
 Password::Password()//constructor
@@ -34,7 +36,7 @@ void Password::addWord(String* word)
 {
 	if (len==0)
 		len=word->length();
-	if (len==word->length;)//not an else-if because you still have to add the first word!
+	if (len==word->length())//not an else-if because you still have to add the first word!
 	{
 		viable_words->add(word);
 		all_words->add(word);
