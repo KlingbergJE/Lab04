@@ -1,6 +1,11 @@
 #if !defined STRING_H
 #define STRING_H
 
+<<<<<<< HEAD
+=======
+namespace CSC2110
+{
+>>>>>>> fad140033b448d66e643c5a487ec17bba21bd517
 class String
 {
    private:
@@ -48,5 +53,9 @@ class String
       int compare(String* other);
 
 };
+<<<<<<< HEAD
+=======
+};
+>>>>>>> fad140033b448d66e643c5a487ec17bba21bd517
 
 #endif

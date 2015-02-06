@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 
+<<<<<<< HEAD
 ReadFile* createReadFile(const char* file_name)
 {
    ReadFile* rf = new ReadFile;
@@ -40,6 +41,43 @@ String* readLine(ReadFile* rf)
 
    string text;
    rf->_eof = !(getline(rf->input_file, text));
+=======
+ReadFile::ReadFile(const char* file_name)
+{
+   input_file = new std::ifstream();
+   input_file->open(file_name);
+   closed = false;
+   _eof = false;
+}
+
+ReadFile::~ReadFile()
+{
+   close();
+   delete input_file;
+}
+
+bool ReadFile::eof()
+{
+   return _eof;
+}
+
+void ReadFile::close()
+{
+   if (!closed)
+   {
+      input_file->close();
+      closed = true;
+   }
+}
+
+String* ReadFile::readLine()
+{
+   if (closed) return NULL;
+   if (_eof) return NULL;
+
+   std::string text;
+   _eof = !(getline(*input_file, text));
+>>>>>>> fad140033b448d66e643c5a487ec17bba21bd517
 
    String* str = new String((const char*) text.c_str());
    return str;

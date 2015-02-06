@@ -1,11 +1,19 @@
 #include "Tokens.h"
+<<<<<<< HEAD
 //TRIVIAL CHANGE
+=======
+
+>>>>>>> fad140033b448d66e643c5a487ec17bba21bd517
 #if !defined NULL
    #define NULL 0
 #endif
 
 #include <iostream>
 using namespace std;
+<<<<<<< HEAD
+=======
+using namespace CSC2110;
+>>>>>>> fad140033b448d66e643c5a487ec17bba21bd517
 
 Tokens::Tokens(String* str, char delimiter)
 {

@@ -1,4 +1,8 @@
 #include "Keyboard.h"
+<<<<<<< HEAD
+=======
+using CSC2110::Keyboard;
+>>>>>>> fad140033b448d66e643c5a487ec17bba21bd517
 #include <iostream>
 
 Keyboard::Keyboard()

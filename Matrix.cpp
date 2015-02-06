@@ -1,9 +1,26 @@
 #include "Matrix.h"
+<<<<<<< HEAD
+=======
+using CSC2110::Matrix;
+>>>>>>> fad140033b448d66e643c5a487ec17bba21bd517
 
 #include <fstream>
 #include <iostream>
 using namespace std;
 
+<<<<<<< HEAD
+=======
+int Matrix::getNumRows()
+{
+   return rows;
+}
+
+int Matrix::getNumCols()
+{
+   return cols;
+}
+
+>>>>>>> fad140033b448d66e643c5a487ec17bba21bd517
 //the indices are 1-based!!
 Matrix::Matrix(int r, int c)
 {

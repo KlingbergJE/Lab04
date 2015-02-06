@@ -1,4 +1,8 @@
 #include "Text.h"
+<<<<<<< HEAD
+=======
+using CSC2110::String;
+>>>>>>> fad140033b448d66e643c5a487ec17bba21bd517
 
 #include <stdlib.h>  //needed for atoi and atof
 #include <cstring>   //needed for strlen and strcmp

@@ -1,4 +1,8 @@
 #include "Random.h"
+<<<<<<< HEAD
+=======
+using CSC2110::Random;
+>>>>>>> fad140033b448d66e643c5a487ec17bba21bd517
 
 #include <time.h>
 #include <stdlib.h>
