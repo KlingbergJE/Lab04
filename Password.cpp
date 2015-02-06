@@ -52,7 +52,7 @@ void Password::guess(int try_password, int num_matches)
 	{
 		String* Word=iter->next();
 		if (getNumMatches(Word, getOriginalWord(try_password))==num_matches);//could use word_guess
-		{
+		{//comparing the matches between the viable word and the guessed word with num_matches from fallout
 			newList->add(Word);
 		}
 	}
