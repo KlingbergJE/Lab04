@@ -2,7 +2,7 @@ AutomatedMakefile = am
 CC = g++
 
 FILES = 
-EXECUTABLE = 
+EXECUTABLE = CLGUIDriver.cpp -o
 
 PROJECT_PATH = $(PROJECT_DIR)
 GTK_PATH = /$(DRIVE_LETTER)/MinGW/GTK
