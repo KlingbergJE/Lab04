@@ -1,8 +1,8 @@
 AutomatedMakefile = am
 CC = g++
 
-FILES = 
-EXECUTABLE = CLGUIDriver.cpp -o
+FILES = CircularList.h; CircularListIterator.h; DoubleNode.h; Update.h
+EXECUTABLE = CLGUIDriver.cpp; CLGUI.cpp
 
 PROJECT_PATH = $(PROJECT_DIR)
 GTK_PATH = /$(DRIVE_LETTER)/MinGW/GTK
