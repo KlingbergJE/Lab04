@@ -1,7 +1,7 @@
 #include "CLGUI.h"
 #include "Text.h"
 using CSC2110::String;
-//making sure the commit works
+
 CLGUI::CLGUI(CircularList<CD>* list, Gtk::Entry* txtGt, int w, int h) : DrawPanel(w, h, list)
 {
    cl = list;
